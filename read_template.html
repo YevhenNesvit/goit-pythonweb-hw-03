@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Messages</title>
+</head>
+<body>
+    <h1>All Messages</h1>
+    {% if messages %}
+        <ul>
+        {% for timestamp, message in messages.items() %}
+            <li><strong>{{ timestamp }}</strong>: {{ message.username }} - {{ message.message }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No messages available.</p>
+    {% endif %}
+    <a href="/">Go to Home</a>
+</body>
+</html>
